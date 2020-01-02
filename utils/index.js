@@ -13,8 +13,8 @@ function findSync(startPath) {
         files.map((val, index) => {
             let fpath = join(path, val)
             let pstat = fs.statSync(fpath)
-            if(pstat.isDirectory) finder(fpath)
-            if(pstat.isFile) results.push(fpath)
+            if(pstat.isDirectory()) finder(fpath)
+            if(pstat.isFile()) results.push(fpath)
         })
     }
     finder(join(process.cwd(), startPath))
