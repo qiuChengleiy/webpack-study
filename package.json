@@ -1,0 +1,32 @@
+{
+  "name": "webpack-study",
+  "version": "1.0.0",
+  "description": "a webpack study project",
+  "main": "index.js",
+  "repository": "https://github.com/qiuChengleiy/webpack-study.git",
+  "author": "qiuChengleiy <qcl9701s666@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev-cli": "cross-env NODE_ENV=development webpack",
+    "build-cli": "cross-env NODE_ENV=production webpack",
+    "dev": "cross-env NODE_ENV=development node build/dev.js",
+    "build": "cross-env NODE_ENV=production node build/build.js"
+  },
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.4.0",
+    "cssnano": "^4.1.10",
+    "ora": "^4.0.3",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.41.5",
+    "webpack-chain": "^6.3.0"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "vue-cli-plugin-commitlint": "^1.0.12",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
