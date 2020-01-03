@@ -13,5 +13,5 @@ ora： 是一个在终端显示输出中显示一些动态内容的优终端显�
 
 chalk： 包的作用是修改控制台中字符串的样式，包括：字体样式(加粗、隐藏等) 字体颜色 背景颜色
 
-
+git cz && conventional-changelog : 规范你的 commit message 并且根据 commit 自动生成 CHANGELOG.md
 
