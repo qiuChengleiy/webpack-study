@@ -11,3 +11,6 @@ document.body.append(h2);
 // ts编译
 require('./test.ts')()
 
+import { cube } from './js/treeShaking'
+
+console.log(cube(2))

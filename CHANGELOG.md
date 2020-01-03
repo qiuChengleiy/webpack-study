@@ -11,4 +11,5 @@
 范围|描述|commitId
 --|--|--
  - | wp-3 | [4bd005a](https://github.com/qiuChengleiy/webpack-study/commit/4bd005a)
+ master-config,build,./ | 新增postcss,scss,less,typecript,智能提示等功能编译 | [b8ce56a](https://github.com/qiuChengleiy/webpack-study/commit/b8ce56a)
 

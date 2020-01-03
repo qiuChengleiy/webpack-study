@@ -33,6 +33,6 @@ webpack(config.toConfig(), (err, stats) => {
         process.exit(1)
     }
 
-    console.log(chalk.cyan('build完成\n'))
+    console.log(chalk.cyan('production has been builded  (￣▽￣)~* \n'))
 })
 
