@@ -6,3 +6,9 @@
  - | wp-1 | [bbb3c86](https://github.com/qiuChengleiy/webpack-study/commit/bbb3c86)
  - | Initial commit | [d5266ec](https://github.com/qiuChengleiy/webpack-study/commit/d5266ec)
 
+
+### 🌟 新功能
+范围|描述|commitId
+--|--|--
+ - | wp-3 | [4bd005a](https://github.com/qiuChengleiy/webpack-study/commit/4bd005a)
+

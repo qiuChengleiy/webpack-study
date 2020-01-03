@@ -20,6 +20,9 @@ config.devServer
 .publicPath(publicPath)
 .clientLogLevel('none')
 
+// 开启 source map
+config.devtool("cheap-source-map");
+
 // 编译配置
 const compiler = webpack(config.toConfig())
 // 拿到devserver参数
