@@ -14,7 +14,7 @@ rimraf.sync(path.join(process.cwd(), 'dist'))
 
 const config = require('./base')()
 const webpack = require('webpack')
-const spinner = ora('项目开始构建中    (￣▽￣)~*')
+const spinner = ora('项目开始构建中    (￣▽￣)~*' + '\n')
 spinner.start()
 
 webpack(config.toConfig(), (err, stats) => {
@@ -29,10 +29,10 @@ webpack(config.toConfig(), (err, stats) => {
     }) + "\n\n")
 
     if(stats.hasErrors()) {
-        console.log(chalk.red('构建失败\n ┭┮﹏┭┮'))
+        console.log(chalk.red('构建失败\n ┭┮﹏┭┮' + '\n'))
         process.exit(1)
     }
 
-    console.log(chalk.cyan('production has been builded  (￣▽￣)~* \n'))
+    console.log(chalk.cyan('production has been builded  (￣▽￣)~*' + '\n'))
 })
 

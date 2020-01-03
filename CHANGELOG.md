@@ -12,4 +12,5 @@
 --|--|--
  - | wp-3 | [4bd005a](https://github.com/qiuChengleiy/webpack-study/commit/4bd005a)
  master-config,build,./ | 新增postcss,scss,less,typecript,智能提示等功能编译 | [b8ce56a](https://github.com/qiuChengleiy/webpack-study/commit/b8ce56a)
+ webpack配置项 | 新增webpack配置项,代码优化 | [917a739](https://github.com/qiuChengleiy/webpack-study/commit/917a739)
 
