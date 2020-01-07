@@ -7,4 +7,5 @@ div {
     height: 200px;
     background: white;
     display: flex;
+    color: rgba(255, 255, 255, 0.966)
 }
