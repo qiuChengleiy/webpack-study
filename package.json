@@ -6,11 +6,14 @@
   "repository": "https://github.com/qiuChengleiy/webpack-study.git",
   "author": "qiuChengleiy <qcl9701s666@163.com>",
   "license": "MIT",
+  "bin": {
+    "wp": "bin/wp.js"
+  },
   "scripts": {
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
     "cz": "npm run log && git add . && git cz",
-    "dev-cli": "cross-env NODE_ENV=development webpack",
-    "build-cli": "cross-env NODE_ENV=production webpack",
+    "dev-demo": "cross-env NODE_ENV=development webpack",
+    "build-demo": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "dll": "cross-env NODE_ENV=production node build/dll.js --report"

@@ -11,7 +11,7 @@ const path = require('path')
 const resolve = src => path.join(process.cwd(), src)
 
 
-module.exports = () => {
+module.exports = options => {
     const map = new Map()
     files.map(_ => {
         // 获取文件夹config下的文件名
@@ -22,17 +22,15 @@ module.exports = () => {
         // css
 
         const fname = _.split('/').pop().replace('.js','')
-        return map.set(fname, require(_)(config, resolve)) // 生成各个配置项 ---- 实现可插可拔
+        return map.set(fname, require(_)(config, resolve, options)) // 生成各个配置项 ---- 实现可插可拔
     })
 
     map.forEach((v,name) => {
         // css 配置
-        if(name !== 'base') {
-            if(name === 'css') {
-                v('css', /\.css$/)
-            } else {
-                v()
-            }
+        if(name === 'css') {
+            v('css', /\.css$/)
+        } else {
+            v()
         }
     })
 

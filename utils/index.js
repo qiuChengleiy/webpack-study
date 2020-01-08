@@ -21,5 +21,37 @@ function findSync(startPath) {
     return results
 } 
 
+/**
+ * @desc 命令行格式化
+ * @param {object} cmd 
+ */
+function cleanArgs(cmd) {
+    const args = {}
+    cmd.options.forEach(o => {
+      const key = camelize(o.long.replace(/^--/, ''))
+      if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
+        args[key] = cmd[key]
+      }
+    })
+    return args
+}
+  
+
+/**
+ * @desc 解析指令并转为大写 例: -t --> T
+ * @param {string} str 
+ */
+function camelize(str) {
+    // console.log(1111)
+    // console.log(str) // wp build -----> report build
+    // str.replace(/-(\w)/g, (_, c) => {
+    //     console.log('cameL..........')
+    //     console.log(_, c, c ? c.toUpperCase() : '') // -t t T
+    // })
+    // return str
+    return str.replace(/-(\w)/g, (_, c) => c ? c.toUpperCase() : '')
+}
+
 
 exports.findSync = findSync
+exports.cleanArgs =cleanArgs

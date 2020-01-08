@@ -5,7 +5,7 @@
  */
 
 module.exports = content => {
-    console.log('正在编译python文件...    (￣▽￣)~*' + '\n')
+    console.log('正在编译python文件...    (￣▽￣)~*')
 
     let newContent;
     const map = new Map()
@@ -30,9 +30,8 @@ module.exports = content => {
     map.forEach((v,k) => {
         newContent = content.replace(v.reg, res => v.replaceFunc(res))
     })
-
-    console.log('python文件编译完成    (￣▽￣)~*' + '\n')
-    console.log(newContent)
+    
+   // console.log(newContent)
     return newContent
 }
 
