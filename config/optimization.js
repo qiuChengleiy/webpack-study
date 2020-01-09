@@ -6,6 +6,8 @@
 
 module.exports = (config, resolve) => {
     return () => {
+       // 使用动态 import 或者 require.ensure 语法， 使用 babel-plugin-import 插件按需引入一些组件库
+      // 将公共的包提取到 chunk-vendors 里面，比如你 require('vue')，webpack 会将 vue 打包进 chunk-vendors.bundle.js
       config
         .optimization.splitChunks({
           chunks: 'async',

@@ -5,15 +5,17 @@
  */
 
 
-module.exports = (config, resolve) => {
+module.exports = (config, resolve, options) => {
     const createCSSRule = (lang, test, loader, options = {}) => {
       const baseRule = config.module.rule(lang).test(test);
       const normalRule = baseRule.oneOf('normal');
+      const devMode = options.env === 'dev'
+
       normalRule
         .use('extract-css-loader')
         .loader(require('mini-css-extract-plugin').loader)
         .options({
-          hmr: process.env.NODE_ENV === 'development',
+          hmr: devMode,
           publicPath: '/'
         })
       normalRule

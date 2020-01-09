@@ -6,12 +6,14 @@
 
 const webpack = require('webpack')
 
-module.exports = (config, resolve) => {
+module.exports = (config, resolve, options) => {
   return () => {
-    config.plugin('DllPlugin')
+    if (process.argv.includes('--dll') || options.dll) {
+      config.plugin('DllPlugin')
       .use(webpack.DllReferencePlugin, [{
         context: process.cwd(),
         manifest: require(resolve('dll/manifest.json'))
       }])
+    }
   }
 }

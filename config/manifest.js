@@ -5,12 +5,22 @@
  */
 
 
-module.exports = (config, resolve) => {
+module.exports = (config, resolve, options) => {
     return () => {
-      config
+       // 分离manifest
+      // config
+      //   .optimization
+      //   .runtimeChunk({
+      //     name: "manifest"
+      // })
+
+      Object.keys(options.pages).forEach(v => {
+        // 多页面配置 --- 相当于new 多个 HtmlWebpackPlugin
+        config
         .optimization
         .runtimeChunk({
-          name: "manifest"
+          name: `pages/${v}/manifest`
         })
+      })
     }
   }

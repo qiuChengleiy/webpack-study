@@ -6,20 +6,19 @@
 
 module.exports = function (config) {
     return {
-      entry: 'src/main.js',
-      dist: 'dist',
-      publicPath: '/common/',
-      port: 8888,
+      assetsPath: '/assests/',
+      publicDevPath: '/dev/',
+      port: 8080,
       pages: {
         index: {
           entry: 'src/main.js',
           template: 'public/index.html',
-          filename: 'index.html',
+          filename: 'pages/index/index.html',
         },
         index2: {
           entry: 'src/main.js',
           template: 'public/index2.html',
-          filename: 'index2.html',
+          filename: 'pages/index2/index2.html',
         }
       },
       chainWebpack(config) {

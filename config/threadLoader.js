@@ -4,14 +4,14 @@
  * 线程数越小编译速度越快
  */
 
-module.exports = (config, resolve) => {
+module.exports = (config, resolve, options) => {
     const baseRule = config.module.rule("js").test(/.js|.tsx?$/);
     return () => {
-      const useThreads = true;
+      const useThreads = process.argv.includes('--worker') || options.worker
       if (useThreads) {
         const threadLoaderConfig = baseRule
           .use("thread-loader")
-          .loader("thread-loader");
+          .loader("thread-loader")
         threadLoaderConfig.options({ workers: 3 });
       }
     };

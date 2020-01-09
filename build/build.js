@@ -18,7 +18,18 @@
     const spinner = ora('项目开始构建中    (￣▽￣)~*' + '\n')
     spinner.start()
     
-    webpack(config.toConfig(), (err, stats) => {
+    const baseConfig = {
+        entry: {
+            index: path.join(process.cwd(), 'src/main.js'),
+            index2: path.join(process.cwd(), 'src/main.js'),
+        }
+    }
+
+    const _base_ = Object.assign(config.toConfig(), baseConfig)
+
+    console.log(_base_.entry)
+
+    webpack(_base_, (err, stats) => {
         spinner.stop()
         if(err) throw err
         process.stdout.write(stats.toString({

@@ -2,6 +2,7 @@
  * wp-6.js 
  * webpack config demo
  * DllPlugin 是将第三方长期不变的包与实际项目隔离开来并分别打包，当我们 build 时再将已经打包好的 dll 包引进来就 ok 了
+ * 在dll编译之后， 在编译会启动dll插件 ， 去找dll下的文件
  */
 
 module.exports = options => {
@@ -36,7 +37,7 @@ module.exports = options => {
     .end();
   
   rimraf.sync(path.join(process.cwd(), "dll"));
-  const spinner = ora("开始构建项目dll  (￣▽￣)~*' ");
+  const spinner = ora("开始构建dll  (￣▽￣)~*' ");
   spinner.start();
   
   webpack(config.toConfig(), function(err, stats) {

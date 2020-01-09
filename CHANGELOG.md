@@ -1,4 +1,4 @@
-# 1.0.0 (2020-01-08)
+# 1.0.0 (2020-01-09)
 
 范围|描述|commitId
 --|--|--
@@ -14,6 +14,7 @@
  loader配置项 | 新增chain-loader, py-loader(自写loader) | [4ec5dcb](https://github.com/qiuChengleiy/webpack-study/commit/4ec5dcb)
  master-config,build,./ | 新增postcss,scss,less,typecript,智能提示等功能编译 | [b8ce56a](https://github.com/qiuChengleiy/webpack-study/commit/b8ce56a)
  webpack配置项 | 新增webpack配置项,代码优化 | [917a739](https://github.com/qiuChengleiy/webpack-study/commit/917a739)
+ 本地打包配置 | 新增webpack多页面打包,wp脚手架搭建,编译优化 | [b7f17e3](https://github.com/qiuChengleiy/webpack-study/commit/b7f17e3)
 
 
 ### 🚀 性能优化

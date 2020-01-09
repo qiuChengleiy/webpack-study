@@ -1,7 +1,7 @@
 // 这样有一个好处就是可以根据逻辑去加载css
-// require("./css/index.less"); //  导入后会被打包提出去
+require("./css/index.less"); //  导入后会被打包提出去
 // require("./css/index.scss");
-// require("./css/index.css");
+//require("./css/index.css");
 
 // const h2 = document.createElement("h2");
 // h2.className = "test";
@@ -28,8 +28,10 @@
 
 
 // py 文件测试
-console.log(require('./test.py').a) 
+// console.log(require('./test.py').a) 
 // ƒ a() {
 //     var a = 1;
 //   }
+
+
 

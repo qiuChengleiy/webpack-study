@@ -15,3 +15,4 @@ chalk： 包的作用是修改控制台中字符串的样式，包括：字体�
 
 git cz && conventional-changelog : package:husky : 规范你的 commit message 并且根据 commit 自动生成 CHANGELOG.md
 
+killport 3000 杀掉3000端口

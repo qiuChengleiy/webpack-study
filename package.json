@@ -16,7 +16,8 @@
     "build-demo": "cross-env NODE_ENV=production webpack",
     "dev": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "dll": "cross-env NODE_ENV=production node build/dll.js --report"
+    "dll": "cross-env NODE_ENV=production node build/dll.js --report",
+    "kill": "killport 8080"
   },
   "dependencies": {
     "@babel/cli": "^7.7.7",
