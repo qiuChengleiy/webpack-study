@@ -12,8 +12,8 @@ module.exports = (config, resolve, options) => {
         const threadLoaderConfig = baseRule
           .use("thread-loader")
           .loader("thread-loader")
-        threadLoaderConfig.options({ workers: 3 });
+        threadLoaderConfig.options({ workers: 2 });
       }
-    };
-  };
+    }
+  }
   

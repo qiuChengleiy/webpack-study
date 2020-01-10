@@ -16,14 +16,3 @@ module.exports = (config, resolve) => {
         .options(bableConf({ version }))
     }
 }
-
-// require.resolve ---  console.log(require.resolve('babel-loader')) // /Users/qiuchenglei/github/webpack-study/node_modules/babel-loader/lib/index.js
-// resolve ---- console.log(resolve('babel-loader')) // /Users/qiuchenglei/github/webpack-study/babel-loader
-
-
-
-
-
-
-
-

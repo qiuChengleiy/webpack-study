@@ -1,4 +1,4 @@
-# 1.0.0 (2020-01-09)
+# 1.0.0 (2020-01-10)
 
 范围|描述|commitId
 --|--|--
@@ -15,6 +15,12 @@
  master-config,build,./ | 新增postcss,scss,less,typecript,智能提示等功能编译 | [b8ce56a](https://github.com/qiuChengleiy/webpack-study/commit/b8ce56a)
  webpack配置项 | 新增webpack配置项,代码优化 | [917a739](https://github.com/qiuChengleiy/webpack-study/commit/917a739)
  本地打包配置 | 新增webpack多页面打包,wp脚手架搭建,编译优化 | [b7f17e3](https://github.com/qiuChengleiy/webpack-study/commit/b7f17e3)
+
+
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ 脚手架配置,多页面配置 | 优化了多页面配置流程 | [f68563c](https://github.com/qiuChengleiy/webpack-study/commit/f68563c)
 
 
 ### 🚀 性能优化

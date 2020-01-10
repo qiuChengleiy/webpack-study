@@ -14,9 +14,13 @@ module.exports = options => {
   const rimraf = require("rimraf");
   const ora = require("ora");
   const chalk = require("chalk");
-  const BundleAnalyzerPlugin = require("../config/BundleAnalyzerPlugin")(config);
-  
+  const BundleAnalyzerPlugin = require("../config/BundleAnalyzerPlugin")(config, resolve='', options);
+  const spinner = ora("开始构建dll  (￣▽￣)~*");
   BundleAnalyzerPlugin();
+  spinner.start();
+  rimraf.sync(path.join(process.cwd(), "dll"));
+
+
   config
     .entry("dll")
     .add("vue")
@@ -36,13 +40,10 @@ module.exports = options => {
     ])
     .end();
   
-  rimraf.sync(path.join(process.cwd(), "dll"));
-  const spinner = ora("开始构建dll  (￣▽￣)~*' ");
-  spinner.start();
-  
   webpack(config.toConfig(), function(err, stats) {
     spinner.stop();
     if (err) throw err;
+    
     process.stdout.write(
       stats.toString({
         colors: true,
@@ -51,13 +52,13 @@ module.exports = options => {
         chunks: false,
         chunkModules: false
       }) + "\n\n"
-    );
+    )
   
     if (stats.hasErrors()) {
       console.log(chalk.red("构建失败   ┭┮﹏┭┮'\n"));
       process.exit(1);
     }
-    console.log(chalk.cyan("build完成  (￣▽￣)~*'\n"));
-  });
+    console.log(chalk.cyan("DLL 构建完成  (￣▽￣)~*'\n"));
+  })
 } 
 

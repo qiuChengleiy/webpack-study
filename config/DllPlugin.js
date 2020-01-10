@@ -11,8 +11,11 @@ module.exports = (config, resolve, options) => {
     if (process.argv.includes('--dll') || options.dll) {
       config.plugin('DllPlugin')
       .use(webpack.DllReferencePlugin, [{
-        context: process.cwd(),
-        manifest: require(resolve('dll/manifest.json'))
+          context: process.cwd(),
+          name: '[name]_[hash]',
+          manifest: require(resolve('dll/manifest.json')),
+          scope: 'xyz',
+          sourceType: 'commonjs2'
       }])
     }
   }

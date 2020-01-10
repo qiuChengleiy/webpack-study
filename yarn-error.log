@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/qiuchenglei/.nvm/versions/node/v10.16.0/bin/node /usr/local/Cellar/yarn/1.17.0/libexec/bin/yarn.js install
+  /Users/qiuchenglei/.nvm/versions/node/v10.16.0/bin/node /usr/local/Cellar/yarn/1.17.0/libexec/bin/yarn.js add -D optimize-css-assets-webpack-plugi
 
 PATH: 
   /Users/qiuchenglei/flutter/bin:/Users/qiuchenglei/.nvm/versions/node/v10.16.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/qiuchenglei/flutter/bin://usr/local/bin
@@ -14,7 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, rmdir '/Users/qiuchenglei/github/webpack-study/node_modules/.staging/@babel'
+  Error: http://registry.npm.taobao.org/optimize-css-assets-webpack-plugi: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.0/libexec/lib/cli.js:66823:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.17.0/libexec/lib/cli.js:140439:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.17.0/libexec/lib/cli.js:141411:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.17.0/libexec/lib/cli.js:141333:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -35,7 +45,8 @@ npm manifest:
       "build-demo": "cross-env NODE_ENV=production webpack",
       "dev": "cross-env NODE_ENV=development node build/dev.js",
       "build": "cross-env NODE_ENV=production node build/build.js",
-      "dll": "cross-env NODE_ENV=production node build/dll.js --report"
+      "dll": "cross-env NODE_ENV=production node build/dll.js --report",
+      "kill": "killport 8080"
     },
     "dependencies": {
       "@babel/cli": "^7.7.7",

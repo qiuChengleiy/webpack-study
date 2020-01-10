@@ -4,11 +4,12 @@
  * 性能优化
  */
 
-module.exports = (config, resolve) => {
+module.exports = (config, resolve, options) => {
     return () => {
-       // 使用动态 import 或者 require.ensure 语法， 使用 babel-plugin-import 插件按需引入一些组件库
+      // 使用动态 import 或者 require.ensure 语法， 使用 babel-plugin-import 插件按需引入一些组件库
       // 将公共的包提取到 chunk-vendors 里面，比如你 require('vue')，webpack 会将 vue 打包进 chunk-vendors.bundle.js
-      config
+      if(options.env === 'build') { // dev下会导致模块不刷新
+        config
         .optimization.splitChunks({
           chunks: 'async',
           minSize: 30000,
@@ -31,6 +32,8 @@ module.exports = (config, resolve) => {
             }
           }
         })
-      config.optimization.usedExports(true)
+
+        config.optimization.usedExports(true)
+      } 
     }
   }

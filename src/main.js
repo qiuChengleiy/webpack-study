@@ -1,7 +1,10 @@
 // 这样有一个好处就是可以根据逻辑去加载css
 require("./css/index.less"); //  导入后会被打包提出去
+
 // require("./css/index.scss");
 //require("./css/index.css");
+
+//import "./css/index.scss"
 
 // const h2 = document.createElement("h2");
 // h2.className = "test";
@@ -9,11 +12,13 @@ require("./css/index.less"); //  导入后会被打包提出去
 // document.body.append(h2);
 
 // // ts编译
-// require('./test.ts')()
+//require('./test.ts')()
+import { cube } from './js/treeShaking'
 
-// import { cube } from './js/treeShaking'
+console.log(cube(2))
 
-// console.log(cube(2))
+console.log(3)
+
 
 
 // // loader 实现可选链

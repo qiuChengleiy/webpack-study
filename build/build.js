@@ -9,26 +9,15 @@
     const ora = require('ora')
     const chalk = require('chalk')
     const path = require('path')
-    
+    const webpack = require('webpack')
+    const { config, entryConfig } = require('./base')(options)
+    const _base_ = Object.assign(config.toConfig(), entryConfig)
+    const spinner = ora('项目开始构建中    (￣▽￣)~*')
+
     // 删除之前编译的dist目录
     options.clear && rimraf.sync(path.join(process.cwd(), 'dist'))
-    
-    const config = require('./base')(options)
-    const webpack = require('webpack')
-    const spinner = ora('项目开始构建中    (￣▽￣)~*' + '\n')
     spinner.start()
     
-    const baseConfig = {
-        entry: {
-            index: path.join(process.cwd(), 'src/main.js'),
-            index2: path.join(process.cwd(), 'src/main.js'),
-        }
-    }
-
-    const _base_ = Object.assign(config.toConfig(), baseConfig)
-
-    console.log(_base_.entry)
-
     webpack(_base_, (err, stats) => {
         spinner.stop()
         if(err) throw err

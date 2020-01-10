@@ -30,9 +30,9 @@ module.exports = (config, resolve) => {
           excludeWarnings: true,
           skipSuccessful: true
         }
-      ]);
-    };
-  };
+      ])
+    }
+  }
 
 
 

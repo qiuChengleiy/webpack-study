@@ -7,7 +7,6 @@
  * 这样就大大降低了编译的时间。尤其是项目越大时越明显。
  */
 
-
 module.exports = (config, resolve) => {
     const baseRule = config.module.rule("js").test(/.js|.tsx?$/);
     const babelPath = resolve("babel.js");

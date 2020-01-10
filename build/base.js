@@ -8,32 +8,31 @@ const Config = require('webpack-chain')
 const config = new Config()
 const files = findSync('config')
 const path = require('path')
+const map = new Map()
+const entryConfig = {}
 const resolve = src => path.join(process.cwd(), src)
 
-
 module.exports = options => {
-    const map = new Map()
     files.map(_ => {
-        // 获取文件夹config下的文件名
-        // console.log(_.split('/').pop().replace('.js',''))
-        // HtmlWebpackPlugin
-        // MiniCssExtractPlugin
-        // base
-        // css
-
         const fname = _.split('/').pop().replace('.js','')
+        
         return map.set(fname, require(_)(config, resolve, options)) // 生成各个配置项 ---- 实现可插可拔
     })
 
-    map.forEach((v,name) => {
-        // css 配置
-        if(name === 'css') {
-            v('css', /\.css$/)
+    map.forEach((v,name) => v())
+
+    // entry 入口配置
+    Object.keys(options.pages).forEach(v => {
+        const entry = {
+            [v]: resolve(options.pages[v].entry)
+        }
+        if(entryConfig.entry) {
+            entryConfig.entry = Object.assign(entryConfig.entry, entry)  
         } else {
-            v()
+            entryConfig.entry = entry
         }
     })
 
-    return config
+    return { config, entryConfig }
 }
 
